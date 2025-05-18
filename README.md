@@ -87,7 +87,7 @@ pm_search_results.plot_results(n=2)
 
 ### Examples
 
-- [Search example notebook](https://raw.githubusercontent.com/mteranm/ramanbiolib/main/examples/search/search-example.ipynb)  
+- [Search example notebook](https://github.com/mteranm/ramanbiolib/blob/main/examples/search/search-example.ipynb)  
 
 ### API documentation
 
@@ -106,7 +106,7 @@ Spectra measured in the laboratory can be included if they are from an isolated 
 ### Articles plots digitazion
 
 As done in the initial version of this database, you can contribute to the digitazion process of the already published Raman spectra in articles figures.  
-- [Plot figure trace extraction example notebook](https://raw.githubusercontent.com/mteranm/ramanbiolib/main/examples/extraction/extraction-example.ipynb)  
+- [Plot figure trace extraction example notebook](https://github.com/mteranm/ramanbiolib/blob/main/examples/extraction/extraction-example.ipynb)  
 
 > **Important:** Only spectra digitized from figures in published articles are accepted.
 
