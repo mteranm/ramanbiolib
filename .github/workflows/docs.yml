@@ -6,6 +6,8 @@ on:
 jobs:
   build-docs:
     runs-on: ubuntu-22.04
+    permissions:
+      contents: write  # <- required to push to gh-pages
 
     steps:
       - name: Checkout source
