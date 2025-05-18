@@ -1,0 +1,71 @@
+:py:mod:`ramanbiolib.db.extraction`
+===================================
+
+.. py:module:: ramanbiolib.db.extraction
+
+.. autoapi-nested-parse::
+
+   Functions to extract spectra traces from articles figures plots.
+
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   ramanbiolib.db.extraction.extract_traces_and_axis
+   ramanbiolib.db.extraction.extract_colored_traces_and_axis
+
+
+
+.. py:function:: extract_traces_and_axis(figure_info, threshold=127, axis_y_ticks=None, same_contour_axis_trace=False, ticks_down=True, prominence_ticks=0.5, ignore_first_tick=False, horizontal_crop=0)
+
+   Extract traces from a figure plot, using opencv contour detection after binary thresholding.
+
+   :param figure_info: The figure information dict in the format: { "image_path": "{path}", "subfigures": [ { "text": "{bottom-trace-name}"}, ...]}
+   :type figure_info: dict
+   :param threshold: The binary threshold value
+   :type threshold: int
+   :param axis_y_ticks: The list of the ticks wavenumbers values. If None OCR is tried for extract the values from the figure.
+   :type axis_y_ticks: list
+   :param same_contour_axis_trace: A flag to indicate if the bottom trace and axis are overlapping.
+   :type same_contour_axis_trace: bool
+   :param ticks_down: A flag to indicate if the x-axis ticks are down the axis.
+   :type ticks_down: bool
+   :param prominence_ticks: The minimum prominence used in the x-axis ticks peaks detection. Useful to fine-tune the ticks detection.
+   :type prominence_ticks: bool
+   :param ignore_first_tick: A flag to indicate if the first tick detected needs to be avoided. Useful in cases where the ticks are over the x-axis and therefore the y-axis can be confused with a tick.
+   :type ignore_first_tick: bool
+   :param horizontal_crop: The horizontal crop min value in pixels. Default 0, no crop. Useful when is necessary to do not consider some region of the plot image.
+   :type horizontal_crop: int
+
+
+.. py:function:: extract_colored_traces_and_axis(figure_info, threshold=127, axis_y_ticks=None, same_contour_axis_trace=False, ticks_down=True, prominence_ticks=0.5, ignore_first_tick=False, horizontal_crop_min=0, horizontal_crop_max=-1)
+
+   Extract colored traces from a figure plot, using opencv contour detection after thresholding for color images.
+
+   :param figure_info: The figure information dict in the format: { "image_path": "{path}", "subfigures": [ { "text": "{bottom-trace-name}"}, ...]}
+   :type figure_info: dict
+   :param threshold: The binary threshold value
+   :type threshold: int
+   :param axis_y_ticks: The list of the ticks wavenumbers values. If None OCR is tried for extract the values from the figure.
+   :type axis_y_ticks: list
+   :param same_contour_axis_trace: A flag to indicate if the bottom trace and axis are overlapping.
+   :type same_contour_axis_trace: bool
+   :param ticks_down: A flag to indicate if the x-axis ticks are down the axis.
+   :type ticks_down: bool
+   :param prominence_ticks: The minimum prominence used in the x-axis ticks peaks detection.
+   :type prominence_ticks: bool
+   :param ignore_first_tick: A flag to indicate if the first tick detected needs to be avoided. Useful in cases where the ticks are over the x-axis and therefore the y-axis can be confused with a tick.
+   :type ignore_first_tick: bool
+   :param horizontal_crop_min: The horizontal crop min value in pixels. Default 0, no crop. Useful when is necessary to do not consider some region of the plot image.
+   :type horizontal_crop_min: int
+   :param horizontal_crop_max: The horizontal crop max value in pixels. Default -1, no crop. Useful when is necessary to do not consider some region of the plot image.
+   :type horizontal_crop_max: int
+
+

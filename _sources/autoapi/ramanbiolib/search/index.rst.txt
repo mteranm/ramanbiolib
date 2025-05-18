@@ -1,0 +1,390 @@
+:py:mod:`ramanbiolib.search`
+============================
+
+.. py:module:: ramanbiolib.search
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   ramanbiolib.search.SearchResults
+   ramanbiolib.search.SpectraSearchResults
+   ramanbiolib.search.PMSearchResults
+   ramanbiolib.search.ComponentSearch
+   ramanbiolib.search.PeakMatchingSearch
+   ramanbiolib.search.SpectraSimilaritySearch
+
+
+
+
+.. py:class:: SearchResults(results_df, wavenumbers)
+
+
+   Parent class for identification search results.
+
+   .. attribute:: database
+
+      The Raman spectra database dataframe
+
+      :type: pandas.DataFrame
+
+   .. attribute:: wavenumbers
+
+      The numpy array with the specturm x-axis wavenumbers
+
+      :type: numpy.ndarray
+
+   .. attribute:: results_df
+
+      The dataframe with the search results
+
+      :type: pandas.DataFrame
+
+   .. py:method:: plot_results(y=[], n=3, peaks=None, height=600, sort_col='similarity_score')
+
+      Plots the query spectrum/peaks and the top N results for comparison.
+
+      :param y: The query spectrum intensity array
+      :type y: list
+      :param n: The N value to use the top N results
+      :type n: int
+      :param peaks: The query spectrum peaks position (in wavenumbers) list to plot
+      :type peaks: list
+      :param height: The plotly output plot height in pixels
+      :type height: int
+
+      :raises Exception: If neither y, nor peaks are empty/None.
+
+
+   .. py:method:: plot_scores(height=500, metric='similarity_score')
+
+      Plots the result scores by sorted index.
+
+      :param height: The plotly output plot height in pixels
+      :type height: int
+      :param metric: The similarity score column name
+      :type metric: str
+
+
+
+.. py:class:: SpectraSearchResults(results_df, query, wavenumbers)
+
+
+   Bases: :py:obj:`SearchResults`
+
+   Results object for spectra similarity search results.
+
+   .. attribute:: database
+
+      The Raman spectra database dataframe
+
+      :type: pandas.DataFrame
+
+   .. attribute:: wavenumbers
+
+      The numpy array with the specturm x-axis wavenumbers
+
+      :type: numpy.ndarray
+
+   .. attribute:: results_df
+
+      The dataframe with the search results
+
+      :type: pandas.DataFrame
+
+   .. attribute:: query
+
+      The query spectrum intensity array
+
+      :type: pnumpy.ndarray
+
+   .. py:method:: get_results(limit=None, show_intensities=False)
+
+      Gets the search results dataframe.
+
+      :param limit: The amount of results to show.
+      :type limit: int
+      :param show_intensities: The flag to indicate if the intensities column is returned, or not.
+      :type show_intensities: bool
+
+
+   .. py:method:: get_most_similar_class(k=5)
+
+      Gets the most similar type for the unkwnow spectrum.
+      It uses k-NN with majority voting.
+
+      :param k: The k nearest neighbours considered.
+      :type k: int
+
+
+   .. py:method:: plot_results(n=3, height=600, sort_col='similarity_score')
+
+      Plots the query spectrum and the top N results for comparison.
+
+      :param n: The N value to use the top N results
+      :type n: int
+      :param height: The plotly output plot height in pixels
+      :type height: int
+
+      :raises Exception: If query spectrum is empty/None.
+
+
+   .. py:method:: plot_scores(height=500)
+
+      Plots the result scores by sorted index.
+
+      :param height: The plotly output plot height in pixels
+      :type height: int
+
+
+
+.. py:class:: PMSearchResults(results_df, wavenumbers, peaks_a, assignments_df)
+
+
+   Bases: :py:obj:`SearchResults`
+
+   Results object for spectra peak matching search results.
+
+   .. attribute:: wavenumbers
+
+      The numpy array with the specturm x-axis wavenumbers
+
+      :type: numpy.ndarray
+
+   .. attribute:: results_df
+
+      The dataframe with the search results
+
+      :type: pandas.DataFrame
+
+   .. attribute:: peaks_a
+
+      The query peak positions (in wavenumbers) array
+
+      :type: numpy.ndarray
+
+   .. attribute:: assignments_df
+
+      The dataframe containing the search result matching assignment for each db component
+
+      :type: pandas.DataFrame
+
+   .. py:method:: get_results(sort_col='IUR', limit=None)
+
+      Gets the search results dataframe.
+
+      :param sort_col: The column used to rank the results [MR, RMR, IUR, PIUR]. Default IUR.
+      :type sort_col: str
+      :param limit: The amount of results to show.
+      :type limit: int
+
+
+   .. py:method:: get_most_similar_class(k=5, sort_col='IUR')
+
+      Gets the most similar type for the unkwnow spectrum.
+      It uses k-NN with majority voting.
+
+      :param k: The k nearest neighbours considered.
+      :type k: int
+      :param sort_col: The metric used to find the nearest neighbours.
+      :type sort_col: int
+
+
+   .. py:method:: plot_pm_scores_matrix(limit=5, height=400, width=1000, color_continuous_scale='blues')
+
+      Plots the peaks matching scores matrix for the top N (limit) results.
+      The matching scores are in range [0, 1] based on the matching distance and the penalization function defined in the search.
+
+      :param limit: The amount of components to consider in the plot.
+      :type limit: int
+      :param height: The plotly output plot height in pixels
+      :type height: int
+      :param width: The plotly output plot width in pixels
+      :type width: int
+      :param color_continuous_scale: The plotly output plot color_continuous_scale
+      :type color_continuous_scale: str
+
+
+   .. py:method:: plot_results(n=3, height=600, query_spectrum=[], sort_col='IUR')
+
+      Plots the query spectrum peaks positions and the top N results for comparison.
+
+      :param n: The N value to use the top N results
+      :type n: int
+      :param height: The plotly output plot height in pixels
+      :type height: int
+      :param query_spectrum: The list of query spectrum intensity trace to be added to the comparison plot. It must match with db sectra wavenumbers dimension.
+      :type query_spectrum: list, Optional
+
+      :raises Exception: If query spectrum and peaks are empty/None.
+
+
+   .. py:method:: plot_scores(height=500, metric='IUR')
+
+      Plots the result scores by sorted index.
+
+      :param height: The plotly output plot height in pixels
+      :type height: int
+      :param metric: The metric used in the plot. Values: MR, RMR, IUR, PIUR. Default IUR.
+      :type metric: int
+
+
+   .. py:method:: get_assignments(component='default')
+
+      Gets the query - db component peak matching assignments detail dataframe.
+      For each query peak position, that was matched in the db, the peak position found in the db component.
+
+      :param component: The component name. If default, the top result component is used.
+      :type component: str
+
+
+
+.. py:class:: ComponentSearch(database)
+
+
+   Parent class for component identification search.
+
+   .. attribute:: database
+
+      The database dataframe
+
+      :type: pandas.DataFrame
+
+   .. py:method:: list_db_components()
+
+      Lists the unique component values in the database
+
+
+   .. py:method:: list_db_types()
+
+      Lists the unique type values in the database
+
+
+   .. py:method:: list_db_lasers()
+
+      Lists the unique laser wavelenght values in the database
+
+
+   .. py:method:: list_db_references()
+
+      Lists the unique article reference values in the database
+
+
+
+.. py:class:: PeakMatchingSearch(wavenumbers=None)
+
+
+   Bases: :py:obj:`ComponentSearch`
+
+   Implements a peak matching search over the peaks position database of Raman spectra for biomolecules.
+
+   .. attribute:: database
+
+      The peak positions database dataframe
+
+      :type: pandas.DataFrame
+
+   .. attribute:: wavenumbers
+
+      The array of wavenumbers (integer) considered in the database. Max range 450 - 1800 cm⁻¹. Default value None, uses the default wavenumbers (range: 450 - 1800 cm⁻¹, step: 1 cm⁻¹)
+
+      :type: numpy.ndarray
+
+   .. py:method:: search(peaks_a, tolerance=0, class_filter=None, sort_score='IUR', min_peak_intensity=0, tol_penalty='linear', unique_components_in_results=True)
+
+      Finds the most similar component in the database using a peak matching score.
+
+      Considering query spectrum peaks Pa and DB spectrum peaks Pb.
+      Metrics:
+
+      - MR (Matching Ratio) = intersection(Pa, Pb)/len(Pa)
+      - RMR (Reverse Matching Ratio) = intersection(Pa, Pb)/len(Pb)
+      - IUR (Intersection Union Ratio) = intersection(Pa, Pb)/union(Pa, Pb)
+      - PIUR (Penalized Intersection Union Ratio) = penalized_intersection(Pa, Pb)/union(Pa, Pb)
+
+      :param peaks_a: The list of unknown spectrum peaks positions in wavenumbers (integer)
+      :type peaks_a: list
+      :param tolerance: The simmetrical maximum distance tolerance for peak matching. Default 0, only exact match.
+      :type tolerance: int
+      :param class_filter: The list of classes to consider in the results. Default value is None, all cases considered.
+      :type class_filter: list
+      :param sort_score: The matching score metric to use for the results ranking. Values: MR, RMR, IUR, PIUR. Default IUR.
+      :type sort_score: str
+      :param min_peak_intensity: The minimum intensity value for database peaks considering the the matching (between 0-1). Default value 0.
+      :type min_peak_intensity: float
+      :param tol_penalty: The type of penalty function applied for PIUR calculation. Values: 'linear' or 'inverse_power'. Default linear.
+      :type tol_penalty: str
+      :param unique_components_in_results: The flag to indicate if the results have duplicates measures results for each component. True when only the best result for each component, in the database, is shown in the results. False otherwise. Default True.
+      :type unique_components_in_results: bool
+
+
+
+.. py:class:: SpectraSimilaritySearch(wavenumbers=None)
+
+
+   Bases: :py:obj:`ComponentSearch`
+
+   Implements a spectra similarity search over the database of Raman spectra for biomolecules.
+
+   .. attribute:: database
+
+      The Raman spectra database dataframe
+
+      :type: pandas.DataFrame
+
+   .. attribute:: wavenumbers
+
+      The array of wavenumbers values for the spectra traces. Max range 450 - 1800 cm⁻¹. If a custom value is set, the db spectra are linearly interpolated to the new wavenumbers list. Default value None, uses the default wavenumbers (range: 450 - 1800 cm⁻¹, step: 1 cm⁻¹)
+
+      :type: numpy.ndarray
+
+   .. py:method:: cosine_similarity(spectra_a, spectra_b)
+
+      Gets the cosine similarity between two spectra.
+      :param spectra_a: The first spectrum to find the similarity
+      :type spectra_a: numpy.ndarray
+      :param spectra_b: The second spectrum to find the similarity
+      :type spectra_b: numpy.ndarray
+
+      .. rubric:: References
+
+      .. [1] https://en.wikipedia.org/wiki/Cosine_similarity
+
+
+   .. py:method:: slk_similarity(x, z, w=25)
+
+      Gets the spectral linear kernel (SLK) similarity between two spectra.
+
+      :param x: The first spectrum to find the similarity
+      :type x: numpy.ndarray
+      :param z: The second spectrum to find the similarity
+      :type z: numpy.ndarray
+      :param w: The window parameter value (The final window size is 2*w+1 around each point). Default 25.
+      :type w: int
+
+      .. rubric:: References
+
+      ..  [2] Khan et al., 'New similarity metrics for Raman spectroscopy', Chemom. Intell. Lab. Syst., vol. 114, pp. 99–108, May 2012, doi: 10.1016/j.chemolab.2012.03.007.
+
+
+   .. py:method:: search(spectra_a, class_filter=None, unique_components_in_results=True, similarity_method='slk', similarity_params=50)
+
+      Finds the most similar component in the database using a spectra similarity score.
+
+      :param spectra_a: The unknown spectrum intensity trace. The values must be interpolated to match the wavenumbers list specified when creating the SpectraSimilaritySearch object.
+      :type spectra_a: list
+      :param class_filter: The list of classes to consider in the results. Default value is None, all cases considered.
+      :type class_filter: list
+      :param unique_components_in_results: The flag to indicate if the results have duplicates measures results for each component. True when only the best result for each component, in the database, is shown in the results. False otherwise. Default True.
+      :type unique_components_in_results: bool
+      :param similarity_method: The similarity score used for results ranking. Values: 'euclidean', 'cosine_similarity', 'slk'. Default: 'slk'.
+      :type similarity_method: str
+      :param similarity_params: In slk case, the value of the window (w) parameter. Is ignored in other cases.
+
+
+

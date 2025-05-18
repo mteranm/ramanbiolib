@@ -1,0 +1,1001 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>ramanbiolib.search &#8212; ramanbiolib 1.0.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'autoapi/ramanbiolib/search/index';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="prev" title="ramanbiolib.db.extraction" href="../db/extraction/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">ramanbiolib 1.0.0 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../../index.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../../index.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramanbiolib</span></code></a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../db/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramanbiolib.db</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../db/extraction/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramanbiolib.db.extraction</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramanbiolib.search</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">API Reference</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramanbiolib</span></code></a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramanbiolib.search</span></code></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="module-ramanbiolib.search">
+<span id="ramanbiolib-search"></span><h1><a class="reference internal" href="#module-ramanbiolib.search" title="ramanbiolib.search"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramanbiolib.search</span></code></a><a class="headerlink" href="#module-ramanbiolib.search" title="Permalink to this heading">#</a></h1>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this heading">#</a></h2>
+<section id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this heading">#</a></h3>
+<table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ramanbiolib.search.SearchResults" title="ramanbiolib.search.SearchResults"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SearchResults</span></code></a></p></td>
+<td><p>Parent class for identification search results.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ramanbiolib.search.SpectraSearchResults" title="ramanbiolib.search.SpectraSearchResults"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SpectraSearchResults</span></code></a></p></td>
+<td><p>Results object for spectra similarity search results.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ramanbiolib.search.PMSearchResults" title="ramanbiolib.search.PMSearchResults"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PMSearchResults</span></code></a></p></td>
+<td><p>Results object for spectra peak matching search results.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ramanbiolib.search.ComponentSearch" title="ramanbiolib.search.ComponentSearch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ComponentSearch</span></code></a></p></td>
+<td><p>Parent class for component identification search.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ramanbiolib.search.PeakMatchingSearch" title="ramanbiolib.search.PeakMatchingSearch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PeakMatchingSearch</span></code></a></p></td>
+<td><p>Implements a peak matching search over the peaks position database of Raman spectra for biomolecules.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ramanbiolib.search.SpectraSimilaritySearch" title="ramanbiolib.search.SpectraSimilaritySearch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SpectraSimilaritySearch</span></code></a></p></td>
+<td><p>Implements a spectra similarity search over the database of Raman spectra for biomolecules.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="ramanbiolib.search.SearchResults">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ramanbiolib.search.</span></span><span class="sig-name descname"><span class="pre">SearchResults</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">results_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavenumbers</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramanbiolib.search.SearchResults" title="Permalink to this definition">#</a></dt>
+<dd><p>Parent class for identification search results.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ramanbiolib.search.SearchResults.database">
+<span class="sig-name descname"><span class="pre">database</span></span><a class="headerlink" href="#ramanbiolib.search.SearchResults.database" title="Permalink to this definition">#</a></dt>
+<dd><p>The Raman spectra database dataframe</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ramanbiolib.search.SearchResults.wavenumbers">
+<span class="sig-name descname"><span class="pre">wavenumbers</span></span><a class="headerlink" href="#ramanbiolib.search.SearchResults.wavenumbers" title="Permalink to this definition">#</a></dt>
+<dd><p>The numpy array with the specturm x-axis wavenumbers</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ramanbiolib.search.SearchResults.results_df">
+<span class="sig-name descname"><span class="pre">results_df</span></span><a class="headerlink" href="#ramanbiolib.search.SearchResults.results_df" title="Permalink to this definition">#</a></dt>
+<dd><p>The dataframe with the search results</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ramanbiolib.search.SearchResults.plot_results">
+<span class="sig-name descname"><span class="pre">plot_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">peaks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">600</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'similarity_score'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramanbiolib.search.SearchResults.plot_results" title="Permalink to this definition">#</a></dt>
+<dd><p>Plots the query spectrum/peaks and the top N results for comparison.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>y</strong> (<em>list</em>) – The query spectrum intensity array</p></li>
+<li><p><strong>n</strong> (<em>int</em>) – The N value to use the top N results</p></li>
+<li><p><strong>peaks</strong> (<em>list</em>) – The query spectrum peaks position (in wavenumbers) list to plot</p></li>
+<li><p><strong>height</strong> (<em>int</em>) – The plotly output plot height in pixels</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>Exception</strong> – If neither y, nor peaks are empty/None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ramanbiolib.search.SearchResults.plot_scores">
+<span class="sig-name descname"><span class="pre">plot_scores</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metric</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'similarity_score'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramanbiolib.search.SearchResults.plot_scores" title="Permalink to this definition">#</a></dt>
+<dd><p>Plots the result scores by sorted index.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>height</strong> (<em>int</em>) – The plotly output plot height in pixels</p></li>
+<li><p><strong>metric</strong> (<em>str</em>) – The similarity score column name</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ramanbiolib.search.SpectraSearchResults">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ramanbiolib.search.</span></span><span class="sig-name descname"><span class="pre">SpectraSearchResults</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">results_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavenumbers</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramanbiolib.search.SpectraSearchResults" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ramanbiolib.search.SearchResults" title="ramanbiolib.search.SearchResults"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SearchResults</span></code></a></p>
+<p>Results object for spectra similarity search results.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ramanbiolib.search.SpectraSearchResults.database">
+<span class="sig-name descname"><span class="pre">database</span></span><a class="headerlink" href="#ramanbiolib.search.SpectraSearchResults.database" title="Permalink to this definition">#</a></dt>
+<dd><p>The Raman spectra database dataframe</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ramanbiolib.search.SpectraSearchResults.wavenumbers">
+<span class="sig-name descname"><span class="pre">wavenumbers</span></span><a class="headerlink" href="#ramanbiolib.search.SpectraSearchResults.wavenumbers" title="Permalink to this definition">#</a></dt>
+<dd><p>The numpy array with the specturm x-axis wavenumbers</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ramanbiolib.search.SpectraSearchResults.results_df">
+<span class="sig-name descname"><span class="pre">results_df</span></span><a class="headerlink" href="#ramanbiolib.search.SpectraSearchResults.results_df" title="Permalink to this definition">#</a></dt>
+<dd><p>The dataframe with the search results</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ramanbiolib.search.SpectraSearchResults.query">
+<span class="sig-name descname"><span class="pre">query</span></span><a class="headerlink" href="#ramanbiolib.search.SpectraSearchResults.query" title="Permalink to this definition">#</a></dt>
+<dd><p>The query spectrum intensity array</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pnumpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ramanbiolib.search.SpectraSearchResults.get_results">
+<span class="sig-name descname"><span class="pre">get_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_intensities</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramanbiolib.search.SpectraSearchResults.get_results" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets the search results dataframe.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>limit</strong> (<em>int</em>) – The amount of results to show.</p></li>
+<li><p><strong>show_intensities</strong> (<em>bool</em>) – The flag to indicate if the intensities column is returned, or not.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ramanbiolib.search.SpectraSearchResults.get_most_similar_class">
+<span class="sig-name descname"><span class="pre">get_most_similar_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramanbiolib.search.SpectraSearchResults.get_most_similar_class" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets the most similar type for the unkwnow spectrum.
+It uses k-NN with majority voting.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>k</strong> (<em>int</em>) – The k nearest neighbours considered.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ramanbiolib.search.SpectraSearchResults.plot_results">
+<span class="sig-name descname"><span class="pre">plot_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">600</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'similarity_score'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramanbiolib.search.SpectraSearchResults.plot_results" title="Permalink to this definition">#</a></dt>
+<dd><p>Plots the query spectrum and the top N results for comparison.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> (<em>int</em>) – The N value to use the top N results</p></li>
+<li><p><strong>height</strong> (<em>int</em>) – The plotly output plot height in pixels</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>Exception</strong> – If query spectrum is empty/None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ramanbiolib.search.SpectraSearchResults.plot_scores">
+<span class="sig-name descname"><span class="pre">plot_scores</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramanbiolib.search.SpectraSearchResults.plot_scores" title="Permalink to this definition">#</a></dt>
+<dd><p>Plots the result scores by sorted index.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>height</strong> (<em>int</em>) – The plotly output plot height in pixels</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ramanbiolib.search.PMSearchResults">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ramanbiolib.search.</span></span><span class="sig-name descname"><span class="pre">PMSearchResults</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">results_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavenumbers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">peaks_a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assignments_df</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramanbiolib.search.PMSearchResults" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ramanbiolib.search.SearchResults" title="ramanbiolib.search.SearchResults"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SearchResults</span></code></a></p>
+<p>Results object for spectra peak matching search results.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ramanbiolib.search.PMSearchResults.wavenumbers">
+<span class="sig-name descname"><span class="pre">wavenumbers</span></span><a class="headerlink" href="#ramanbiolib.search.PMSearchResults.wavenumbers" title="Permalink to this definition">#</a></dt>
+<dd><p>The numpy array with the specturm x-axis wavenumbers</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ramanbiolib.search.PMSearchResults.results_df">
+<span class="sig-name descname"><span class="pre">results_df</span></span><a class="headerlink" href="#ramanbiolib.search.PMSearchResults.results_df" title="Permalink to this definition">#</a></dt>
+<dd><p>The dataframe with the search results</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ramanbiolib.search.PMSearchResults.peaks_a">
+<span class="sig-name descname"><span class="pre">peaks_a</span></span><a class="headerlink" href="#ramanbiolib.search.PMSearchResults.peaks_a" title="Permalink to this definition">#</a></dt>
+<dd><p>The query peak positions (in wavenumbers) array</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ramanbiolib.search.PMSearchResults.assignments_df">
+<span class="sig-name descname"><span class="pre">assignments_df</span></span><a class="headerlink" href="#ramanbiolib.search.PMSearchResults.assignments_df" title="Permalink to this definition">#</a></dt>
+<dd><p>The dataframe containing the search result matching assignment for each db component</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ramanbiolib.search.PMSearchResults.get_results">
+<span class="sig-name descname"><span class="pre">get_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sort_col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'IUR'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramanbiolib.search.PMSearchResults.get_results" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets the search results dataframe.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sort_col</strong> (<em>str</em>) – The column used to rank the results [MR, RMR, IUR, PIUR]. Default IUR.</p></li>
+<li><p><strong>limit</strong> (<em>int</em>) – The amount of results to show.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ramanbiolib.search.PMSearchResults.get_most_similar_class">
+<span class="sig-name descname"><span class="pre">get_most_similar_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'IUR'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramanbiolib.search.PMSearchResults.get_most_similar_class" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets the most similar type for the unkwnow spectrum.
+It uses k-NN with majority voting.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>k</strong> (<em>int</em>) – The k nearest neighbours considered.</p></li>
+<li><p><strong>sort_col</strong> (<em>int</em>) – The metric used to find the nearest neighbours.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ramanbiolib.search.PMSearchResults.plot_pm_scores_matrix">
+<span class="sig-name descname"><span class="pre">plot_pm_scores_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">400</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color_continuous_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'blues'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramanbiolib.search.PMSearchResults.plot_pm_scores_matrix" title="Permalink to this definition">#</a></dt>
+<dd><p>Plots the peaks matching scores matrix for the top N (limit) results.
+The matching scores are in range [0, 1] based on the matching distance and the penalization function defined in the search.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>limit</strong> (<em>int</em>) – The amount of components to consider in the plot.</p></li>
+<li><p><strong>height</strong> (<em>int</em>) – The plotly output plot height in pixels</p></li>
+<li><p><strong>width</strong> (<em>int</em>) – The plotly output plot width in pixels</p></li>
+<li><p><strong>color_continuous_scale</strong> (<em>str</em>) – The plotly output plot color_continuous_scale</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ramanbiolib.search.PMSearchResults.plot_results">
+<span class="sig-name descname"><span class="pre">plot_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">600</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_spectrum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'IUR'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramanbiolib.search.PMSearchResults.plot_results" title="Permalink to this definition">#</a></dt>
+<dd><p>Plots the query spectrum peaks positions and the top N results for comparison.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> (<em>int</em>) – The N value to use the top N results</p></li>
+<li><p><strong>height</strong> (<em>int</em>) – The plotly output plot height in pixels</p></li>
+<li><p><strong>query_spectrum</strong> (<em>list</em><em>, </em><em>Optional</em>) – The list of query spectrum intensity trace to be added to the comparison plot. It must match with db sectra wavenumbers dimension.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>Exception</strong> – If query spectrum and peaks are empty/None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ramanbiolib.search.PMSearchResults.plot_scores">
+<span class="sig-name descname"><span class="pre">plot_scores</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metric</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'IUR'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramanbiolib.search.PMSearchResults.plot_scores" title="Permalink to this definition">#</a></dt>
+<dd><p>Plots the result scores by sorted index.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>height</strong> (<em>int</em>) – The plotly output plot height in pixels</p></li>
+<li><p><strong>metric</strong> (<em>int</em>) – The metric used in the plot. Values: MR, RMR, IUR, PIUR. Default IUR.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ramanbiolib.search.PMSearchResults.get_assignments">
+<span class="sig-name descname"><span class="pre">get_assignments</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">component</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramanbiolib.search.PMSearchResults.get_assignments" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets the query - db component peak matching assignments detail dataframe.
+For each query peak position, that was matched in the db, the peak position found in the db component.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>component</strong> (<em>str</em>) – The component name. If default, the top result component is used.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ramanbiolib.search.ComponentSearch">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ramanbiolib.search.</span></span><span class="sig-name descname"><span class="pre">ComponentSearch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">database</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramanbiolib.search.ComponentSearch" title="Permalink to this definition">#</a></dt>
+<dd><p>Parent class for component identification search.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ramanbiolib.search.ComponentSearch.database">
+<span class="sig-name descname"><span class="pre">database</span></span><a class="headerlink" href="#ramanbiolib.search.ComponentSearch.database" title="Permalink to this definition">#</a></dt>
+<dd><p>The database dataframe</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ramanbiolib.search.ComponentSearch.list_db_components">
+<span class="sig-name descname"><span class="pre">list_db_components</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ramanbiolib.search.ComponentSearch.list_db_components" title="Permalink to this definition">#</a></dt>
+<dd><p>Lists the unique component values in the database</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ramanbiolib.search.ComponentSearch.list_db_types">
+<span class="sig-name descname"><span class="pre">list_db_types</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ramanbiolib.search.ComponentSearch.list_db_types" title="Permalink to this definition">#</a></dt>
+<dd><p>Lists the unique type values in the database</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ramanbiolib.search.ComponentSearch.list_db_lasers">
+<span class="sig-name descname"><span class="pre">list_db_lasers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ramanbiolib.search.ComponentSearch.list_db_lasers" title="Permalink to this definition">#</a></dt>
+<dd><p>Lists the unique laser wavelenght values in the database</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ramanbiolib.search.ComponentSearch.list_db_references">
+<span class="sig-name descname"><span class="pre">list_db_references</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ramanbiolib.search.ComponentSearch.list_db_references" title="Permalink to this definition">#</a></dt>
+<dd><p>Lists the unique article reference values in the database</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ramanbiolib.search.PeakMatchingSearch">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ramanbiolib.search.</span></span><span class="sig-name descname"><span class="pre">PeakMatchingSearch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wavenumbers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramanbiolib.search.PeakMatchingSearch" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ramanbiolib.search.ComponentSearch" title="ramanbiolib.search.ComponentSearch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ComponentSearch</span></code></a></p>
+<p>Implements a peak matching search over the peaks position database of Raman spectra for biomolecules.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ramanbiolib.search.PeakMatchingSearch.database">
+<span class="sig-name descname"><span class="pre">database</span></span><a class="headerlink" href="#ramanbiolib.search.PeakMatchingSearch.database" title="Permalink to this definition">#</a></dt>
+<dd><p>The peak positions database dataframe</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ramanbiolib.search.PeakMatchingSearch.wavenumbers">
+<span class="sig-name descname"><span class="pre">wavenumbers</span></span><a class="headerlink" href="#ramanbiolib.search.PeakMatchingSearch.wavenumbers" title="Permalink to this definition">#</a></dt>
+<dd><p>The array of wavenumbers (integer) considered in the database. Max range 450 - 1800 cm⁻¹. Default value None, uses the default wavenumbers (range: 450 - 1800 cm⁻¹, step: 1 cm⁻¹)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ramanbiolib.search.PeakMatchingSearch.search">
+<span class="sig-name descname"><span class="pre">search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">peaks_a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_filter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_score</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'IUR'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_peak_intensity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol_penalty</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'linear'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unique_components_in_results</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramanbiolib.search.PeakMatchingSearch.search" title="Permalink to this definition">#</a></dt>
+<dd><p>Finds the most similar component in the database using a peak matching score.</p>
+<p>Considering query spectrum peaks Pa and DB spectrum peaks Pb.
+Metrics:</p>
+<ul class="simple">
+<li><p>MR (Matching Ratio) = intersection(Pa, Pb)/len(Pa)</p></li>
+<li><p>RMR (Reverse Matching Ratio) = intersection(Pa, Pb)/len(Pb)</p></li>
+<li><p>IUR (Intersection Union Ratio) = intersection(Pa, Pb)/union(Pa, Pb)</p></li>
+<li><p>PIUR (Penalized Intersection Union Ratio) = penalized_intersection(Pa, Pb)/union(Pa, Pb)</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>peaks_a</strong> (<em>list</em>) – The list of unknown spectrum peaks positions in wavenumbers (integer)</p></li>
+<li><p><strong>tolerance</strong> (<em>int</em>) – The simmetrical maximum distance tolerance for peak matching. Default 0, only exact match.</p></li>
+<li><p><strong>class_filter</strong> (<em>list</em>) – The list of classes to consider in the results. Default value is None, all cases considered.</p></li>
+<li><p><strong>sort_score</strong> (<em>str</em>) – The matching score metric to use for the results ranking. Values: MR, RMR, IUR, PIUR. Default IUR.</p></li>
+<li><p><strong>min_peak_intensity</strong> (<em>float</em>) – The minimum intensity value for database peaks considering the the matching (between 0-1). Default value 0.</p></li>
+<li><p><strong>tol_penalty</strong> (<em>str</em>) – The type of penalty function applied for PIUR calculation. Values: ‘linear’ or ‘inverse_power’. Default linear.</p></li>
+<li><p><strong>unique_components_in_results</strong> (<em>bool</em>) – The flag to indicate if the results have duplicates measures results for each component. True when only the best result for each component, in the database, is shown in the results. False otherwise. Default True.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ramanbiolib.search.SpectraSimilaritySearch">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ramanbiolib.search.</span></span><span class="sig-name descname"><span class="pre">SpectraSimilaritySearch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wavenumbers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramanbiolib.search.SpectraSimilaritySearch" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ramanbiolib.search.ComponentSearch" title="ramanbiolib.search.ComponentSearch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ComponentSearch</span></code></a></p>
+<p>Implements a spectra similarity search over the database of Raman spectra for biomolecules.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ramanbiolib.search.SpectraSimilaritySearch.database">
+<span class="sig-name descname"><span class="pre">database</span></span><a class="headerlink" href="#ramanbiolib.search.SpectraSimilaritySearch.database" title="Permalink to this definition">#</a></dt>
+<dd><p>The Raman spectra database dataframe</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ramanbiolib.search.SpectraSimilaritySearch.wavenumbers">
+<span class="sig-name descname"><span class="pre">wavenumbers</span></span><a class="headerlink" href="#ramanbiolib.search.SpectraSimilaritySearch.wavenumbers" title="Permalink to this definition">#</a></dt>
+<dd><p>The array of wavenumbers values for the spectra traces. Max range 450 - 1800 cm⁻¹. If a custom value is set, the db spectra are linearly interpolated to the new wavenumbers list. Default value None, uses the default wavenumbers (range: 450 - 1800 cm⁻¹, step: 1 cm⁻¹)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ramanbiolib.search.SpectraSimilaritySearch.cosine_similarity">
+<span class="sig-name descname"><span class="pre">cosine_similarity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spectra_a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spectra_b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramanbiolib.search.SpectraSimilaritySearch.cosine_similarity" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets the cosine similarity between two spectra.
+:param spectra_a: The first spectrum to find the similarity
+:type spectra_a: numpy.ndarray
+:param spectra_b: The second spectrum to find the similarity
+:type spectra_b: numpy.ndarray</p>
+<p class="rubric">References</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id1" role="note">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Cosine_similarity">https://en.wikipedia.org/wiki/Cosine_similarity</a></p>
+</aside>
+</aside>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ramanbiolib.search.SpectraSimilaritySearch.slk_similarity">
+<span class="sig-name descname"><span class="pre">slk_similarity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">25</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramanbiolib.search.SpectraSimilaritySearch.slk_similarity" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets the spectral linear kernel (SLK) similarity between two spectra.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>numpy.ndarray</em>) – The first spectrum to find the similarity</p></li>
+<li><p><strong>z</strong> (<em>numpy.ndarray</em>) – The second spectrum to find the similarity</p></li>
+<li><p><strong>w</strong> (<em>int</em>) – The window parameter value (The final window size is 2*w+1 around each point). Default 25.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id2" role="note">
+<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
+<p>Khan et al., ‘New similarity metrics for Raman spectroscopy’, Chemom. Intell. Lab. Syst., vol. 114, pp. 99–108, May 2012, doi: 10.1016/j.chemolab.2012.03.007.</p>
+</aside>
+</aside>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ramanbiolib.search.SpectraSimilaritySearch.search">
+<span class="sig-name descname"><span class="pre">search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spectra_a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_filter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unique_components_in_results</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">similarity_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'slk'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">similarity_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ramanbiolib.search.SpectraSimilaritySearch.search" title="Permalink to this definition">#</a></dt>
+<dd><p>Finds the most similar component in the database using a spectra similarity score.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>spectra_a</strong> (<em>list</em>) – The unknown spectrum intensity trace. The values must be interpolated to match the wavenumbers list specified when creating the SpectraSimilaritySearch object.</p></li>
+<li><p><strong>class_filter</strong> (<em>list</em>) – The list of classes to consider in the results. Default value is None, all cases considered.</p></li>
+<li><p><strong>unique_components_in_results</strong> (<em>bool</em>) – The flag to indicate if the results have duplicates measures results for each component. True when only the best result for each component, in the database, is shown in the results. False otherwise. Default True.</p></li>
+<li><p><strong>similarity_method</strong> (<em>str</em>) – The similarity score used for results ranking. Values: ‘euclidean’, ‘cosine_similarity’, ‘slk’. Default: ‘slk’.</p></li>
+<li><p><strong>similarity_params</strong> – In slk case, the value of the window (w) parameter. Is ignored in other cases.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../db/extraction/index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ramanbiolib.db.extraction</span></code></p>
+      </div>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ramanbiolib.search.SearchResults"><code class="docutils literal notranslate"><span class="pre">SearchResults</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ramanbiolib.search.SearchResults.database"><code class="docutils literal notranslate"><span class="pre">SearchResults.database</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ramanbiolib.search.SearchResults.wavenumbers"><code class="docutils literal notranslate"><span class="pre">SearchResults.wavenumbers</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ramanbiolib.search.SearchResults.results_df"><code class="docutils literal notranslate"><span class="pre">SearchResults.results_df</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ramanbiolib.search.SearchResults.plot_results"><code class="docutils literal notranslate"><span class="pre">SearchResults.plot_results()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ramanbiolib.search.SearchResults.plot_scores"><code class="docutils literal notranslate"><span class="pre">SearchResults.plot_scores()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ramanbiolib.search.SpectraSearchResults"><code class="docutils literal notranslate"><span class="pre">SpectraSearchResults</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ramanbiolib.search.SpectraSearchResults.database"><code class="docutils literal notranslate"><span class="pre">SpectraSearchResults.database</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ramanbiolib.search.SpectraSearchResults.wavenumbers"><code class="docutils literal notranslate"><span class="pre">SpectraSearchResults.wavenumbers</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ramanbiolib.search.SpectraSearchResults.results_df"><code class="docutils literal notranslate"><span class="pre">SpectraSearchResults.results_df</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ramanbiolib.search.SpectraSearchResults.query"><code class="docutils literal notranslate"><span class="pre">SpectraSearchResults.query</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ramanbiolib.search.SpectraSearchResults.get_results"><code class="docutils literal notranslate"><span class="pre">SpectraSearchResults.get_results()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ramanbiolib.search.SpectraSearchResults.get_most_similar_class"><code class="docutils literal notranslate"><span class="pre">SpectraSearchResults.get_most_similar_class()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ramanbiolib.search.SpectraSearchResults.plot_results"><code class="docutils literal notranslate"><span class="pre">SpectraSearchResults.plot_results()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ramanbiolib.search.SpectraSearchResults.plot_scores"><code class="docutils literal notranslate"><span class="pre">SpectraSearchResults.plot_scores()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ramanbiolib.search.PMSearchResults"><code class="docutils literal notranslate"><span class="pre">PMSearchResults</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ramanbiolib.search.PMSearchResults.wavenumbers"><code class="docutils literal notranslate"><span class="pre">PMSearchResults.wavenumbers</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ramanbiolib.search.PMSearchResults.results_df"><code class="docutils literal notranslate"><span class="pre">PMSearchResults.results_df</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ramanbiolib.search.PMSearchResults.peaks_a"><code class="docutils literal notranslate"><span class="pre">PMSearchResults.peaks_a</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ramanbiolib.search.PMSearchResults.assignments_df"><code class="docutils literal notranslate"><span class="pre">PMSearchResults.assignments_df</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ramanbiolib.search.PMSearchResults.get_results"><code class="docutils literal notranslate"><span class="pre">PMSearchResults.get_results()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ramanbiolib.search.PMSearchResults.get_most_similar_class"><code class="docutils literal notranslate"><span class="pre">PMSearchResults.get_most_similar_class()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ramanbiolib.search.PMSearchResults.plot_pm_scores_matrix"><code class="docutils literal notranslate"><span class="pre">PMSearchResults.plot_pm_scores_matrix()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ramanbiolib.search.PMSearchResults.plot_results"><code class="docutils literal notranslate"><span class="pre">PMSearchResults.plot_results()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ramanbiolib.search.PMSearchResults.plot_scores"><code class="docutils literal notranslate"><span class="pre">PMSearchResults.plot_scores()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ramanbiolib.search.PMSearchResults.get_assignments"><code class="docutils literal notranslate"><span class="pre">PMSearchResults.get_assignments()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ramanbiolib.search.ComponentSearch"><code class="docutils literal notranslate"><span class="pre">ComponentSearch</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ramanbiolib.search.ComponentSearch.database"><code class="docutils literal notranslate"><span class="pre">ComponentSearch.database</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ramanbiolib.search.ComponentSearch.list_db_components"><code class="docutils literal notranslate"><span class="pre">ComponentSearch.list_db_components()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ramanbiolib.search.ComponentSearch.list_db_types"><code class="docutils literal notranslate"><span class="pre">ComponentSearch.list_db_types()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ramanbiolib.search.ComponentSearch.list_db_lasers"><code class="docutils literal notranslate"><span class="pre">ComponentSearch.list_db_lasers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ramanbiolib.search.ComponentSearch.list_db_references"><code class="docutils literal notranslate"><span class="pre">ComponentSearch.list_db_references()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ramanbiolib.search.PeakMatchingSearch"><code class="docutils literal notranslate"><span class="pre">PeakMatchingSearch</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ramanbiolib.search.PeakMatchingSearch.database"><code class="docutils literal notranslate"><span class="pre">PeakMatchingSearch.database</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ramanbiolib.search.PeakMatchingSearch.wavenumbers"><code class="docutils literal notranslate"><span class="pre">PeakMatchingSearch.wavenumbers</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ramanbiolib.search.PeakMatchingSearch.search"><code class="docutils literal notranslate"><span class="pre">PeakMatchingSearch.search()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ramanbiolib.search.SpectraSimilaritySearch"><code class="docutils literal notranslate"><span class="pre">SpectraSimilaritySearch</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ramanbiolib.search.SpectraSimilaritySearch.database"><code class="docutils literal notranslate"><span class="pre">SpectraSimilaritySearch.database</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ramanbiolib.search.SpectraSimilaritySearch.wavenumbers"><code class="docutils literal notranslate"><span class="pre">SpectraSimilaritySearch.wavenumbers</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ramanbiolib.search.SpectraSimilaritySearch.cosine_similarity"><code class="docutils literal notranslate"><span class="pre">SpectraSimilaritySearch.cosine_similarity()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ramanbiolib.search.SpectraSimilaritySearch.slk_similarity"><code class="docutils literal notranslate"><span class="pre">SpectraSimilaritySearch.slk_similarity()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ramanbiolib.search.SpectraSimilaritySearch.search"><code class="docutils literal notranslate"><span class="pre">SpectraSimilaritySearch.search()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../../../_sources/autoapi/ramanbiolib/search/index.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
