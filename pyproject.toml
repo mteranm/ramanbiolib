@@ -28,6 +28,10 @@ dependencies = [
 [project.optional-dependencies]
 extraction = ["opencv-python>=4.10.0.84,<4.11"]
 
+[project.urls]
+Homepage = "https://github.com/mteranm/ramanbiolib"
+Repository = "https://github.com/mteranm/ramanbiolib"
+
 [tool.setuptools.packages.find]
 include = ["ramanbiolib*"]
 exclude = ["ramanbiolib.tests"]
