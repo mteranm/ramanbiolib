@@ -31,6 +31,8 @@ extraction = ["opencv-python>=4.10.0.84,<4.11"]
 [project.urls]
 Homepage = "https://github.com/mteranm/ramanbiolib"
 Repository = "https://github.com/mteranm/ramanbiolib"
+"API Docs" = "https://mteranm.github.io/ramanbiolib/"
+"Bug Tracker" = "https://github.com/mteranm/ramanbiolib/issues"
 
 [tool.setuptools.packages.find]
 include = ["ramanbiolib*"]

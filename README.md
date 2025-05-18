@@ -15,6 +15,10 @@ The library supports identification via spectral similarity or peak-matching alg
 pip install ramanbiolib
 ```
 
+## RamanBiolib Graphical User Interface (GUI)
+
+For the GUI see the project [RamanBiolib-UI](https://github.com/mteranm/ramanbiolib-ui)
+
 ## Usage
 
 ### Spectra similarity search
@@ -84,6 +88,10 @@ pm_search_results.plot_results(n=2)
 ### Examples
 
 - [Search example notebook](https://raw.githubusercontent.com/mteranm/ramanbiolib/main/examples/search/search-example.ipynb)  
+
+### API documentation
+
+[API reference](https://mteranm.github.io/ramanbiolib/)
 
 ## How to contribute with Raman spectra
 
@@ -177,9 +185,6 @@ The spectra needs to be standarized as follows:
 - **normalization (R)**: the original normalization method implemented and the software, if applied. 
 - **additional_info (R)**: further information that might be relevant for the users when considering the spectrum.
 
-## RamanBiolib Graphical User Interface (GUI)
-
-For the GUI see the project [RamanBiolib-UI](https://github.com/mteranm/ramanbiolib-ui)
 
 ## How to cite
 
