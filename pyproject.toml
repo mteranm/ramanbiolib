@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ramanbiolib"
+authors = [
+    {name = "Marcelo Teran Miranda"},
+]
+description = "Biomolecules identification search using Raman spectra."
+readme = "README.md"
+requires-python = ">=3.7"
+keywords = ["raman", "spectroscopy", "biomolecules"]
+license = {text = "GNU GPLv3"}
+classifiers = [
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Programming Language :: Python :: 3",
+]
+dynamic = ["version"]
+
+dependencies = [
+  "scipy>=1.7.3",
+  "numpy>=1.21.6",
+  "pandas>=1.1.5",
+  "plotly>=5.0",
+]
+
+[project.optional-dependencies]
+extraction = ["opencv-python>=4.10.0.84,<4.11"]
+
+[tool.setuptools.packages.find]
+include = ["ramanbiolib*"]
+exclude = ["ramanbiolib.tests"]
+
+[tool.setuptools.package-data]
+db = ["raman_peaks_db.csv", "raman_spectra_db.csv", "metadata_db.csv"]
+
+[tool.setuptools.dynamic]
+version = {attr = "ramanbiolib.__version__"}
