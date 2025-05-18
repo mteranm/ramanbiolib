@@ -1,5 +1,5 @@
 <picture align="center">
-  <img alt="RamanBiolib logo" style="background:white; padding: 20px;" src="doc/logo.png">
+  <img alt="RamanBiolib logo" style="background:white; padding: 20px;" src="https://raw.githubusercontent.com/mteranm/ramanbiolib/main/doc/logo.png">
 </picture>
 
 
@@ -12,7 +12,7 @@ The library supports identification via spectral similarity or peak-matching alg
 ## Installation
 
 ```
-pip install git+https://github.com/mteranm/ramanbiolib.git
+pip install ramanbiolib
 ```
 
 ## Usage
@@ -36,7 +36,7 @@ Show the top N results
 ```
 search_results.get_results(limit=10)
 ```
-![spectra search results](./doc/usage-images/spectra-search-results.png)
+![spectra search results](https://raw.githubusercontent.com/mteranm/ramanbiolib/main/doc/usage-images/spectra-search-results.png)
 
 Visualy compare the results
 
@@ -44,7 +44,7 @@ Visualy compare the results
 search_results.plot_results(n=2)
 ```
 
-![spectra search plot](./doc/usage-images/spectra-search-plot.png)
+![spectra search plot](https://raw.githubusercontent.com/mteranm/ramanbiolib/main/doc/usage-images/spectra-search-plot.png)
 
 
 ### Peak matching search
@@ -70,7 +70,7 @@ Show the top N results
 pm_search_results.get_results(limit=10, sort_col='IUR')
 ```
 
-![pm search results](./doc/usage-images/pm-search-results.png)
+![pm search results](https://raw.githubusercontent.com/mteranm/ramanbiolib/main/doc/usage-images/pm-search-results.png)
 
 
 Visualy compare the results
@@ -78,12 +78,12 @@ Visualy compare the results
 ```
 pm_search_results.plot_results(n=2)
 ```
-![pm search plot](./doc/usage-images/pm-search-plot.png)
+![pm search plot](https://raw.githubusercontent.com/mteranm/ramanbiolib/main/doc/usage-images/pm-search-plot.png)
 
 
 ### Examples
 
-- [Search example notebook](./examples/search/search-example.ipynb)  
+- [Search example notebook](https://raw.githubusercontent.com/mteranm/ramanbiolib/main/examples/search/search-example.ipynb)  
 
 ## How to contribute with Raman spectra
 
@@ -98,7 +98,7 @@ Spectra measured in the laboratory can be included if they are from an isolated 
 ### Articles plots digitazion
 
 As done in the initial version of this database, you can contribute to the digitazion process of the already published Raman spectra in articles figures.  
-- [Plot figure trace extraction example notebook](./examples/extraction/extraction-example.ipynb)  
+- [Plot figure trace extraction example notebook](https://raw.githubusercontent.com/mteranm/ramanbiolib/main/examples/extraction/extraction-example.ipynb)  
 
 > **Important:** Only spectra digitized from figures in published articles are accepted.
 
@@ -194,9 +194,9 @@ The database files in this repository (the CSV files *raman_peaks_db.csv*, *rama
 - You are free to copy, modify, and share the data, but any adaptations must also be licensed under the same terms (i.e., share-alike).
 - You must attribute the source of the data.
 
-See the full details of the Open Database License in the [LICENSE-ODbL](./LICENSE-ODbL) license file.
+See the full details of the Open Database License in the [LICENSE-ODbL](https://raw.githubusercontent.com/mteranm/ramanbiolib/main/LICENSE-ODbL) license file.
 
 
 The code in this repository is licensed under **GNU General Public License v3**:
 
-See the full details of the GNU General Public License v3 in the [GNU GPL v3](./LICENSE) license file.
+See the full details of the GNU General Public License v3 in the [GNU GPL v3](https://raw.githubusercontent.com/mteranm/ramanbiolib/main/LICENSE) license file.
