@@ -68,8 +68,9 @@ coverage.xml
 .scrapy
 
 # Sphinx documentation
-docs
 docs/_build/
+docs/_static/
+docs/_templates/
 docs/autoapi/
 
 # PyBuilder
