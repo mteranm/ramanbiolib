@@ -11,8 +11,6 @@ from numpy.linalg import norm
 from scipy.spatial import distance
 from scipy import interpolate
 
-__MAX_ASSIGNMENT_COMBINATIONS = 5000
-
 class SearchResults:
     """
     Parent class for identification search results.
@@ -505,6 +503,7 @@ class PeakMatchingSearch(ComponentSearch):
         )
         self.max_peaks_len = database['peaks'].str.len().max()
         self.wavenumbers = wavenumbers if not wavenumbers is None else np.arange(450, 1801)
+        self.__MAX_ASSIGNMENT_COMBINATIONS = 5000
         super().__init__(database)
 
     def __get_intersection_union_score(
@@ -577,8 +576,8 @@ class PeakMatchingSearch(ComponentSearch):
             )
         )
 
-        if len(b_duplicated_assignation_combinations) > __MAX_ASSIGNMENT_COMBINATIONS:
-            b_duplicated_assignation_combinations[:__MAX_ASSIGNMENT_COMBINATIONS]
+        if len(b_duplicated_assignation_combinations) > self.__MAX_ASSIGNMENT_COMBINATIONS:
+            b_duplicated_assignation_combinations[:self.__MAX_ASSIGNMENT_COMBINATIONS]
             print(f"Warning! Too many duplicated assignments combinations. Not considering all cases for deduplication. Reduce the tolerance or the amount of close peaks.")
 
         # As combinations are created considering the max duplicates for a single peak, we need to filter
