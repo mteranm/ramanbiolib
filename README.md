@@ -190,7 +190,7 @@ The spectra needs to be standarized as follows:
 
 Please use the following citation when using this tool:
 
-> Terán, M and Ruiz, JJ and Loza-Álvarez, P and Masip, D and Merino, D, *Open Raman Spectral Library for Biomolecule Identification*. Available at SSRN: https://ssrn.com/abstract=5185686 or http://dx.doi.org/10.2139/ssrn.5185686 
+> M Terán, JJ Ruiz, P Loza-Alvarez, D Masip, D Merino, *Open Raman spectral library for biomolecule identification*, Chemometrics and Intelligent Laboratory Systems, Volume 264, 2025, 105476, ISSN 0169-7439, https://doi.org/10.1016/j.chemolab.2025.105476.
 
 ## License
 
