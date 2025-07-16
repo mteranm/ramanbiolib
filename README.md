@@ -5,7 +5,7 @@
 
 # RamanBiolib
 
-A Raman spectral search library for biological molecules identification, over a database of 140 components, including lipids, proteins, carbohydrates, amino acids, metabolites, nucleic acids, pigments and others.
+A Python-based Raman spectral search library for biological molecules identification, over a database of 140 components, including lipids, proteins, carbohydrates, amino acids, metabolites, nucleic acids, pigments and others.
 
 The library supports identification via spectral similarity or peak-matching algorithms, using either full spectrum plots or most relevant peak positions. For details on the underlying methods, see our [article](http://dx.doi.org/10.2139/ssrn.5185686).
 
@@ -85,11 +85,12 @@ pm_search_results.plot_results(n=2)
 ![pm search plot](https://raw.githubusercontent.com/mteranm/ramanbiolib/main/doc/usage-images/pm-search-plot.png)
 
 
-### Examples
+## Examples
 
-- [Search example notebook](https://github.com/mteranm/ramanbiolib/blob/main/examples/search/search-example.ipynb)  
+### Jupyter notebooks search example:  
+[Search example notebook](https://github.com/mteranm/ramanbiolib/blob/main/examples/search/search-example.ipynb)  
 
-### API documentation
+## API documentation
 
 [API reference](https://mteranm.github.io/ramanbiolib/)
 
@@ -113,13 +114,20 @@ As done in the initial version of this database, you can contribute to the digit
 ### Contribution process
 
 1. **Fork** this repository.
+2. Create a **branch** (feature/branch_name)
 2. Add your new spectra entries to:
-   - `raman_spectra_db.csv`
-   - `raman_peaks_db.csv`
-   - `metadata_db.csv`
-3. **Commit** your changes.
+   - `ramanbiolib/db/raman_spectra_db.csv`
+   - `ramanbiolib/db/raman_peaks_db.csv`
+   - `ramanbiolib/db/metadata_db.csv`
+3. **Commit** & **Push** your changes.
 4. Open a **Pull Request (PR)**.
 5. Once reviewed and approved, your contribution will be included in the next database release.
+
+> **PR useful docs:**
+> - [Working with forks](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks)
+> - [About pull requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests#draft-pull-requests)
+> - [Creating a pull request from a fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork)
+> - [GitHub flow](https://docs.github.com/en/get-started/using-github/github-flow)
 
 To contribute, you need to add new rows with the new spectra information in all database files: raman_spectra_db.csv, raman_peaks_db.csv, and metadata_db.csv.
 
